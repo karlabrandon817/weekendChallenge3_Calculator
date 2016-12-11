@@ -1,5 +1,3 @@
-var returnedAnswer = [];
-
 $(document).ready(function() {
     $('#totalButton').on('click', clickedTotal);
 
@@ -23,9 +21,7 @@ $(document).ready(function() {
             },
             error: function() {
                 console.log('error with ajax call...');
-
             }
-
         }); //end postData ajax call
 
         getData();
@@ -40,8 +36,18 @@ $(document).ready(function() {
             url: "/returnData",
             success: function(response) {
                 console.log('back from post call:', response);
-                returnedAnswer.push(response);
+                //display answer to DOM
+                $('#totalDisplay').html("Total:" + ' ' + response[response.length - 1]);
             }
         }); //end getData ajax call
     };
+
+
+    $('#clearButton').on('click', function() {
+        console.log('clear button click');
+        $('#firstNumber').val('');
+        $('#secondNumber').val('');
+        $('#totalDisplay').html("Total:" + ' ');
+    });
+
 }); //end doc ready function

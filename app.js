@@ -52,13 +52,15 @@ var calculateMe = function() {
         }
     } //end for loop
     answerArray.push(answer);
+
 }; //end calculateMe function
+
 app.get('/returnData', function(req, res) {
     console.log('base url hit in app.get');
     res.send(answerArray);
-    //send info back
-});
 
-//send info back
+}); //end send info back
+
+
 
 //---
