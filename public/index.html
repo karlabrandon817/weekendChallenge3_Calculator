@@ -11,14 +11,16 @@
 <body>
     <h1>Karla's Calculator</h1>
     <input type="number" id="firstNumber" placeholder="Enter a number">
-    <button class="mathButton" data-button="add" id="additionBtn">+</button>
-    <button class="mathButton" data-button="subtract" id="subtractionBtn">-</button>
-    <button class="mathButton" data-button="multiply" id="multiplicationBtn">x</button>
-    <button class="mathButton" data-button="divide" id="divisionBtn">/</button>
-    <input type="number" id="secondNumber" placeholder="Enter a second number">
-    <button class="mathButton" data-button="total" id="total">=</button>
+    <select id="operations">
+          <option value="add">+</option>
+          <option value="subtract">-</option>
+          <option value="multiply">*</option>
+          <option value="divide">/</option>
+        </select>
+    <input type="number" id="secondNumber" placeholder="Enter another number">
+    <button class="mathButton" data-button="total" id="totalButton">=</button>
     <div id="totalDisplay">Total:</div>
-
+    <button class="mathButton" data-button="reset" id="clearButton">Clear</button>
 </body>
 
 </html>

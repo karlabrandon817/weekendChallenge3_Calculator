@@ -7,6 +7,9 @@ var urlEncodedParser = bodyParser.urlencoded({
 });
 var port = process.env.PORT || 3001;
 
+var userInput = [];
+var answerArray = [];
+
 app.listen(port, function(req, res) {
     console.log('server is listening on', port);
 }); //end spin up server
@@ -19,3 +22,43 @@ app.get('/', function(req, res) {
 
 //static folder
 app.use(express.static('public'));
+
+app.post('/sendData', urlEncodedParser, function(req, res) {
+    console.log('in post route');
+    console.log('req.body in post = ', req.body);
+    userInput.push(req.body);
+    calculateMe();
+    console.log(userInput);
+});
+
+var calculateMe = function() {
+    console.log('inside my module');
+
+    var answer = '';
+
+    for (var i = 0; i < userInput.length; i++) {
+        if (userInput[i].type === 'add') {
+            answer = Number(userInput[i].x) + Number(userInput[i].y);
+            console.log(answer);
+        } else if (userInput[i].type === 'subtract') {
+            answer = Number(userInput[i].x) - Number(userInput[i].y);
+            console.log(answer);
+        } else if (userInput[i].type === 'multiply') {
+            answer = Number(userInput[i].x) * Number(userInput[i].y);
+            console.log(answer);
+        } else if (userInput[i].type === 'divide') {
+            answer = Number(userInput[i].x) / Number(userInput[i].y);
+            console.log(answer);
+        }
+    } //end for loop
+    answerArray.push(answer);
+}; //end calculateMe function
+app.get('/returnData', function(req, res) {
+    console.log('base url hit in app.get');
+    res.send(answerArray);
+    //send info back
+});
+
+//send info back
+
+//---
