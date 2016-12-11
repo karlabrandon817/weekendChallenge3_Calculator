@@ -37,7 +37,7 @@ $(document).ready(function() {
             success: function(response) {
                 console.log('back from post call:', response);
                 //display answer to DOM
-                $('#totalDisplay').html("Total:" + ' ' + response[response.length - 1]);
+                $('#totalDisplay').html("Total:" + ' ' + (response[response.length - 1]).toLocaleString());
             }
         }); //end getData ajax call
     };
