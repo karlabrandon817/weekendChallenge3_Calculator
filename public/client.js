@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     $('#totalButton').on('click', clickedTotal);
 
     function clickedTotal() {
@@ -16,7 +17,6 @@ $(document).ready(function() {
             data: objectToSend,
             sucess: function(response) {
                 console.log('back from post call: ', response);
-                //display(response);
                 clickedTotal();
             },
             error: function() {
@@ -36,11 +36,12 @@ $(document).ready(function() {
             url: "/returnData",
             success: function(response) {
                 console.log('back from post call:', response);
+
                 //display answer to DOM
                 $('#totalDisplay').html("Total:" + ' ' + (response[response.length - 1]).toLocaleString());
             }
         }); //end getData ajax call
-    };
+    }; //end getData function
 
 
     $('#clearButton').on('click', function() {
@@ -48,6 +49,6 @@ $(document).ready(function() {
         $('#firstNumber').val('');
         $('#secondNumber').val('');
         $('#totalDisplay').html("Total:" + ' ');
-    });
+    }); //end clearButton function
 
 }); //end doc ready function

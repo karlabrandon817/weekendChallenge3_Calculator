@@ -7,6 +7,8 @@ Technologies Used
 * HTML
 * Node
 * Express
+* CSS
+* Bootstrap 
 
 Assignment Details
 -------------------

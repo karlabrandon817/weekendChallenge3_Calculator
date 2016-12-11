@@ -6,22 +6,33 @@
     <title>Calculator Challenge</title>
     <script type="text/javascript" src="/jquery-3.1.1.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="client.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h1>Karla's Calculator</h1>
-    <input type="number" id="firstNumber" placeholder="Enter a number">
-    <select id="operations">
+    <container>
+
+        <h2>Karla's Calculator</h2>
+        <input type="number" id="firstNumber" placeholder="Enter a number">
+        <select id="operations">
           <option value="add">+</option>
           <option value="subtract">-</option>
           <option value="multiply">*</option>
           <option value="divide">/</option>
         </select>
-    <input type="number" id="secondNumber" placeholder="Enter another number">
-    <button class="mathButton" data-button="total" id="totalButton">=</button>
-    <button class="mathButton" data-button="reset" id="clearButton">Clear</button>
-    <div id="totalDisplay">Total:</div>
-
+        <input type="number" id="secondNumber" placeholder="Enter another number">
+        <button class="mathButton" data-button="total" id="totalButton">=</button>
+        <button class="mathButton" data-button="reset" id="clearButton">Clear</button>
+        <div id="totalDisplay">Total:</div>
+    </container>
 </body>
 
 </html>
