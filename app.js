@@ -27,11 +27,11 @@ app.post('/sendData', urlEncodedParser, function(req, res) {
     console.log('in post route');
     console.log('req.body in post = ', req.body);
     userInput.push(req.body);
-    calculateMe();
+    calculateData();
     console.log(userInput);
 });
 
-var calculateMe = function() {
+var calculateData = function() {
     console.log('inside my module');
 
     var answer = '';
@@ -53,7 +53,7 @@ var calculateMe = function() {
     } //end for loop
     answerArray.push(answer);
 
-}; //end calculateMe function
+}; //end calculateData function
 
 app.get('/returnData', function(req, res) {
     console.log('base url hit in app.get');
