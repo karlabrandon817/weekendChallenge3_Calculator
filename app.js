@@ -24,18 +24,14 @@ app.get('/', function(req, res) {
 app.use(express.static('public'));
 
 app.post('/sendData', urlEncodedParser, function(req, res) {
-    console.log('in post route');
     console.log('req.body in post = ', req.body);
     userInput.push(req.body);
     calculateData();
-    console.log(userInput);
 });
 
 var calculateData = function() {
     console.log('inside my module');
-
     var answer = '';
-
     for (var i = 0; i < userInput.length; i++) {
         if (userInput[i].type === 'add') {
             answer = Number(userInput[i].x) + Number(userInput[i].y);
@@ -60,7 +56,3 @@ app.get('/returnData', function(req, res) {
     res.send(answerArray);
 
 }); //end send info back
-
-
-
-//---
