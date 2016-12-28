@@ -54,5 +54,4 @@ var calculateData = function() {
 app.get('/returnData', function(req, res) {
     console.log('base url hit in app.get');
     res.send(answerArray);
-
 }); //end send info back

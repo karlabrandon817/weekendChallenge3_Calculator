@@ -15,7 +15,6 @@ $(document).ready(function() {
             data: objectToSend,
             sucess: function(response) {
                 console.log('back from post call: ', response);
-                clickedTotal();
             },
             error: function() {
                 console.log('error with ajax call...');
